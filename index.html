@@ -64,6 +64,11 @@
         .btn:hover {
             background-color: #45a049;
         }
+
+        #calculation-form>div {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
@@ -74,81 +79,85 @@
     </header>
 
     <div class="container">
-        <div>
+        <div style="display: flex; ">
+            <span width="30%">
+                <form id="calculation-form">
+                    <div>
+                        <label for="average-salary">平均日薪酬：</label>
+                        <input type="number" id="average-salary" class="input-field" placeholder="请输入日薪酬" required>
+                    </div>
+                    <div>
+                        <label for="work-hours">工作时长：</label>
+                        <input type="number" id="work-hours" class="input-field" placeholder="请输入工作时长" required>
+                    </div>
+                    <div>
+                        <label for="commute-hours">通勤时长：</label>
+                        <input type="number" id="commute-hours" class="input-field" placeholder="请输入通勤时长" required>
+                    </div>
+                    <div>
+                        <label for="fish-hours">摸鱼时长：</label>
+                        <input type="number" id="fish-hours" class="input-field" placeholder="请输入摸鱼时长" required>
+                    </div>
+                    <div>
+                        <label for="education-coefficient">学历系数：</label>
+                        <select id="education-coefficient" class="select-field" required>
+                            <option value="0.8">专科及以下0.8</option>
+                            <option value="1">普通本科1</option>
+                            <option value="1.2">高级本科1.2</option>
+                            <option value="1.4">普通硕士1.4</option>
+                            <option value="1.6">高级硕士1.6</option>
+                            <option value="1.8">普通博士1.8</option>
+                            <option value="2">高级博士2.0</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="work-env-coefficient">工作环境系数：</label>
+                        <select id="work-env-coefficient" class="select-field" required>
+                            <option value="0.8">偏僻地区0.8</option>
+                            <option value="0.9">工厂户外0.9</option>
+                            <option value="1">普通1.0</option>
+                            <option value="1.1">体制内1.1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="opposite-gender-coefficient">异性环境系数：</label>
+                        <select id="opposite-gender-coefficient" class="select-field" required>
+                            <option value="0.9">没有0.9</option>
+                            <option value="1">不多不少1.0</option>
+                            <option value="1.1">很多1.1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="colleague-env-coefficient">同事环境系数：</label>
+                        <select id="colleague-env-coefficient" class="select-field" required>
+                            <option value="0.95">SB很多0.95</option>
+                            <option value="1">普通很多1.0</option>
+                            <option value="1.05">优秀很多1.05</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="qualification-coefficient">职业资格系数：</label>
+                        <select id="qualification-coefficient" class="select-field" required>
+                            <option value="1">无要求、二级1</option>
+                            <option value="1.05">建造造价监理1.05</option>
+                            <option value="1.1">建筑岩土结构1.1</option>
+                            <option value="1.15">主任医师、教授1.15</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="before-8am">是否8:30前上班：</label>
+                        <select id="before-8am" class="select-field" required>
+                            <option value="0.95">是0.95</option>
+                            <option value="1">否1.0</option>
+                        </select>
+                    </div>
 
-            <form id="calculation-form">
-                <div>
-                    <label for="average-salary">平均日薪酬：</label>
-                    <input type="number" id="average-salary" class="input-field" placeholder="请输入日薪酬" required>
-                </div>
-                <div>
-                    <label for="work-hours">工作时长：</label>
-                    <input type="number" id="work-hours" class="input-field" placeholder="请输入工作时长" required>
-                </div>
-                <div>
-                    <label for="commute-hours">通勤时长：</label>
-                    <input type="number" id="commute-hours" class="input-field" placeholder="请输入通勤时长" required>
-                </div>
-                <div>
-                    <label for="fish-hours">摸鱼时长：</label>
-                    <input type="number" id="fish-hours" class="input-field" placeholder="请输入摸鱼时长" required>
-                </div>
-                <div>
-                    <label for="education-coefficient">学历系数：</label>
-                    <select id="education-coefficient" class="select-field" required>
-                        <option value="0.8">专科及以下0.8</option>
-                        <option value="1">普通本科1</option>
-                        <option value="1.2">高级本科1.2</option>
-                        <option value="1.4">普通硕士1.4</option>
-                        <option value="1.6">高级硕士1.6</option>
-                        <option value="1.8">普通博士1.8</option>
-                        <option value="2">高级博士2.0</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="work-env-coefficient">工作环境系数：</label>
-                    <select id="work-env-coefficient" class="select-field" required>
-                        <option value="0.8">偏僻地区0.8</option>
-                        <option value="0.9">工厂户外0.9</option>
-                        <option value="1">普通1.0</option>
-                        <option value="1.1">体制内1.1</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="opposite-gender-coefficient">异性环境系数：</label>
-                    <select id="opposite-gender-coefficient" class="select-field" required>
-                        <option value="0.9">没有0.9</option>
-                        <option value="1">不多不少1.0</option>
-                        <option value="1.1">很多1.1</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="colleague-env-coefficient">同事环境系数：</label>
-                    <select id="colleague-env-coefficient" class="select-field" required>
-                        <option value="0.95">SB很多0.95</option>
-                        <option value="1">普通很多1.0</option>
-                        <option value="1.05">优秀很多1.05</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="qualification-coefficient">职业资格系数：</label>
-                    <select id="qualification-coefficient" class="select-field" required>
-                        <option value="1">无要求、二级1</option>
-                        <option value="1.05">建造造价监理1.05</option>
-                        <option value="1.1">建筑岩土结构1.1</option>
-                        <option value="1.15">主任医师、教授1.15</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="before-8am">是否8:30前上班：</label>
-                    <select id="before-8am" class="select-field" required>
-                        <option value="0.95">是0.95</option>
-                        <option value="1">否1.0</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn">计算性价比</button>
-            </form>
+                    <button type="submit" class="btn">计算性价比</button>
+                </form>
+            </span>
+            <span width="30%">
+                <img style="width: 500px;" src="./staic/image/image.png" alt="">
+            </span>
         </div>
 
         <div id="result" style="margin-top: 20px; display: none;">
@@ -180,7 +189,7 @@
             }
 
             const workTime = workHours + commuteHours - 0.5 * fishHours;  // 计算工作时长
-            const costEffectiveness = 35 * workTime * educationCoefficient * workEnvCoefficient * oppositeGenderCoefficient * colleagueEnvCoefficient * qualificationCoefficient * before8amCoefficient;
+            const costEffectiveness = (workEnvCoefficient * oppositeGenderCoefficient * colleagueEnvCoefficient * qualificationCoefficient * before8amCoefficient) / (35 * workTime * educationCoefficient);
 
             // Display the result
             let resultText = '';
