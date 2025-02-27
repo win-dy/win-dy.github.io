@@ -181,7 +181,7 @@
             const colleagueEnvCoefficient = parseFloat(document.getElementById('colleague-env-coefficient').value);
             const qualificationCoefficient = parseFloat(document.getElementById('qualification-coefficient').value);
             const before8amCoefficient = parseFloat(document.getElementById('before-8am').value);
-
+            debugger
             // Validate inputs
             if (isNaN(averageSalary) || isNaN(workHours) || isNaN(commuteHours) || isNaN(fishHours) || averageSalary <= 0 || workHours <= 0) {
                 alert("请输入有效的数字！");
@@ -189,16 +189,16 @@
             }
 
             const workTime = workHours + commuteHours - 0.5 * fishHours;  // 计算工作时长
-            const costEffectiveness = (workEnvCoefficient * oppositeGenderCoefficient * colleagueEnvCoefficient * qualificationCoefficient * before8amCoefficient) / (35 * workTime * educationCoefficient);
+            const costEffectiveness = (averageSalary * workEnvCoefficient * oppositeGenderCoefficient * colleagueEnvCoefficient * qualificationCoefficient * before8amCoefficient) / (35 * workTime * educationCoefficient);
 
             // Display the result
             let resultText = '';
             if (costEffectiveness < 0.8) {
-                resultText = "工作性价比低，建议提升效率！";
+                resultText = `分数为${costEffectiveness}，工作性价比低，建议提升效率！`;
             } else if (costEffectiveness >= 0.8 && costEffectiveness <= 1.5) {
-                resultText = "工作性价比较好，继续保持！";
+                resultText = `分数为${costEffectiveness}，工作性价比较好，继续保持！`;
             } else if (costEffectiveness > 1.5) {
-                resultText = "工作性价比非常好，继续加油！";
+                resultText = `分数为${costEffectiveness}，工作性价比非常好，继续加油！`;
             }
 
             // Show the result
