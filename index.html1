@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人网站首页">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>欢迎来到我的个人网站</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#projects">项目展示</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>你好，我是张宝平</h2>
+            <p>欢迎来到我的个人网站！这里展示了我个人的项目和一些想法。</p>
+            <a href="#about" class="btn">了解更多</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>关于我</h2>
+        <p>这里可以写一些个人信息、背景、兴趣爱好等内容。</p>
+    </section>
+
+    <section id="projects">
+        <h2>我的项目</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>项目 1</h3>
+                <p>项目描述...</p>
+            </div>
+            <div class="project-card">
+                <h3>项目 2</h3>
+                <p>项目描述...</p>
+            </div>
+            <div class="project-card">
+                <h3>项目 3</h3>
+                <p>项目描述...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>联系我</h2>
+        <p>你可以通过以下方式联系我：</p>
+        <ul>
+            <li>Email: example@example.com</li>
+            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 个人网站. 版权所有。</p>
+    </footer>
+
+    <script>
+        // 示例 JavaScript，可以扩展其他功能，比如动态效果等
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("个人网站加载完成！");
+        });
+    </script>
+</body>
+</html>
