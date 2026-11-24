@@ -1,0 +1,116 @@
+.pdf-tool {
+  width: min(42rem, calc(100% - 1.75rem));
+  margin: clamp(1.75rem, 6vw, 4rem) auto 4rem;
+}
+
+.pdf-tool h1 {
+  color: var(--teal);
+  font-size: clamp(2rem, 6vw, 3.3rem);
+  line-height: 1.2;
+}
+
+.pdf-intro {
+  margin: 0.85rem 0 1.75rem;
+  color: var(--ink-soft);
+}
+
+.pdf-form {
+  padding: clamp(1rem, 4vw, 2rem);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.pdf-fields {
+  display: grid;
+  gap: 1.25rem;
+  min-inline-size: 0;
+  border: 0;
+}
+
+.pdf-field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.pdf-field label {
+  font-weight: 500;
+}
+
+.pdf-field input {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+.pdf-field input::file-selector-button {
+  margin-inline-end: 0.65rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--teal);
+  font: inherit;
+  cursor: pointer;
+}
+
+.pdf-passwords {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pdf-hint,
+.pdf-status {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.pdf-actions button {
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.pdf-actions button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.pdf-actions [hidden] {
+  display: none;
+}
+
+.pdf-form :focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.pdf-status:not(:empty) {
+  margin-top: 0.85rem;
+}
+
+.pdf-status.is-error {
+  color: #ffa29a;
+}
+
+@media (max-width: 34rem) {
+  .pdf-passwords {
+    grid-template-columns: 1fr;
+  }
+}

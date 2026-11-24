@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="在浏览器中为 PDF 设置打开密码，重命名并下载加密后的文件。">
+    <title>PDF 加密 · win-dy</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="site-header">
+        <div class="navbar">
+            <a class="brand" href="../index.html#projects">win-dy · 返回项目</a>
+        </div>
+    </header>
+
+    <main class="pdf-tool">
+        <h1>PDF 加密</h1>
+        <p class="pdf-intro">使用 AES-256 为 PDF 设置打开密码。文件和密码均在浏览器内处理。</p>
+
+        <form id="pdf-form" class="pdf-form">
+            <fieldset id="pdf-fields" class="pdf-fields">
+                <div class="pdf-field">
+                    <label for="source-file">原始 PDF</label>
+                    <input id="source-file" type="file" accept=".pdf,application/pdf" required>
+                </div>
+                <div class="pdf-passwords">
+                    <div class="pdf-field">
+                        <label for="password">打开密码</label>
+                        <input id="password" type="password" autocomplete="new-password" required>
+                    </div>
+                    <div class="pdf-field">
+                        <label for="confirm-password">确认密码</label>
+                        <input id="confirm-password" type="password" autocomplete="new-password" required>
+                    </div>
+                </div>
+                <div class="pdf-field">
+                    <label for="output-name">下载文件名</label>
+                    <input id="output-name" type="text" placeholder="加密文件.pdf" aria-describedby="name-hint">
+                    <p id="name-hint" class="pdf-hint">可在下载前随时修改，自动补齐 .pdf 后缀。</p>
+                </div>
+            </fieldset>
+            <div class="pdf-actions">
+                <button id="encrypt-button" class="btn btn-primary" type="submit" disabled>加密 PDF</button>
+                <a id="download-link" class="btn btn-ghost" hidden>下载加密 PDF</a>
+            </div>
+            <p id="pdf-status" class="pdf-status" role="status"></p>
+            <noscript><p class="pdf-status">请启用 JavaScript 后使用 PDF 加密。</p></noscript>
+        </form>
+    </main>
+</body>
+</html>

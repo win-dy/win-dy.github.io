@@ -1,74 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="个人网站首页">
-    <title>个人主页</title>
+    <meta name="description" content="win-dy 的个人主页 — 项目、想法与联系方式">
+    <title>win-dy · 个人主页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <header>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
         <div class="navbar">
-            <h1>欢迎来到我的个人网站</h1>
+            <a class="brand" href="#hero">win-dy</a>
             <nav>
                 <ul>
-                    <li><a href="#about">关于我</a></li>
-                    <li><a href="#projects">项目展示</a></li>
-                    <li><a href="#contact">联系我</a></li>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#contact">联系</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
+    <section id="hero" class="hero">
         <div class="hero-content">
-            <h2>你好，我是张宝平</h2>
-            <p>欢迎来到我的个人网站！这里展示了我个人的项目和一些想法。</p>
-            <a href="#about" class="btn">了解更多</a>
+            <p class="hero-brand">win-dy</p>
+            <h1 class="hero-title">
+                <span id="typed-title" aria-live="polite"></span><span class="typed-cursor" aria-hidden="true"></span>
+            </h1>
+            <p class="hero-lead">个人主页。记录项目、兴趣与日常实践，欢迎随便逛逛。</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">查看项目</a>
+                <a href="https://github.com/win-dy" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <span class="orb orb-a"></span>
+            <span class="orb orb-b"></span>
+            <span class="orb orb-c"></span>
         </div>
     </section>
 
-    <section id="about">
-        <h2>关于我</h2>
-        <p>这里可以写一些个人信息、背景、兴趣爱好等内容。</p>
-    </section>
-
-    <section id="projects">
-        <h2>我的项目</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h3>项目 1</h3>
-                <p>项目描述...</p>
-            </div>
-            <div class="project-card">
-                <h3>项目 2</h3>
-                <p>项目描述...</p>
-            </div>
-            <div class="project-card">
-                <h3>项目 3</h3>
-                <p>项目描述...</p>
-            </div>
+    <section id="about" class="section">
+        <div class="section-inner">
+            <p class="section-label">About</p>
+            <h2>关于</h2>
+            <p class="section-text">
+                喜欢把零散的想法收成可交互的小工具与页面，
+                关注清晰的信息结构、舒服的视觉节奏，以及真正好用的细节。
+            </p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>联系我</h2>
-        <p>你可以通过以下方式联系我：</p>
-        <ul>
-            <li>Email: example@example.com</li>
-            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></li>
-        </ul>
+    <section id="projects" class="section section-alt">
+        <div class="section-inner">
+            <p class="section-label">Projects</p>
+            <h2>项目</h2>
+            <p class="section-text">一些正在做、或已经能打开的小作品。</p>
+            <ul class="project-list">
+                <li>
+                    <a class="project-link" href="./travel-archive/index.html">
+                        <span class="project-index">01</span>
+                        <span class="project-body">
+                            <span class="project-title">旅行足迹</span>
+                            <span class="project-desc">记录旅行足迹，记录生活。</span>
+                        </span>
+                        <span class="project-arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="project-link" href="./pdf-encrypt/index.html">
+                        <span class="project-index">02</span>
+                        <span class="project-body">
+                            <span class="project-title">PDF 加密</span>
+                            <span class="project-desc">在浏览器中为 PDF 设置打开密码，自定义文件名后下载。</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="project-link" href="https://github.com/win-dy" target="_blank" rel="noopener noreferrer">
+                        <span class="project-index">03</span>
+                        <span class="project-body">
+                            <span class="project-title">更多在 GitHub</span>
+                            <span class="project-desc">后续作品会陆续放在这里，也可以直接去仓库翻翻。</span>
+                        </span>
+                        <span class="project-arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 个人网站. 版权所有。</p>
+    <section id="contact" class="section">
+        <div class="section-inner">
+            <p class="section-label">Contact</p>
+            <h2>联系</h2>
+            <p class="section-text">有交流或合作，随时找我。</p>
+            <ul class="contact-list">
+                <li>
+                    <span class="contact-label">GitHub</span>
+                    <a href="https://github.com/win-dy" target="_blank" rel="noopener noreferrer">github.com/win-dy</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> win-dy</p>
     </footer>
 
     <script>
-        // 示例 JavaScript，可以扩展其他功能，比如动态效果等
         document.addEventListener("DOMContentLoaded", function () {
-            console.log("个人网站加载完成！");
+            document.getElementById("year").textContent = new Date().getFullYear();
+            document.body.classList.add("is-ready");
+
+            const header = document.querySelector(".site-header");
+            const onScroll = () => {
+                header.classList.toggle("is-scrolled", window.scrollY > 24);
+            };
+            onScroll();
+            window.addEventListener("scroll", onScroll, { passive: true });
+
+            const phrases = [
+                "把想法做成能用的东西",
+                "写一点小工具，摸一点鱼",
+                "欢迎来到 win-dy 的主页"
+            ];
+            const typedEl = document.getElementById("typed-title");
+            const cursorEl = document.querySelector(".typed-cursor");
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            if (!typedEl) return;
+
+            if (reduceMotion) {
+                typedEl.textContent = phrases[0];
+                if (cursorEl) cursorEl.style.display = "none";
+                return;
+            }
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let deleting = false;
+
+            const typeSpeed = 110;
+            const deleteSpeed = 55;
+            const holdDelay = 1600;
+            const gapDelay = 400;
+
+            function tick() {
+                const current = phrases[phraseIndex];
+
+                if (!deleting) {
+                    charIndex += 1;
+                    typedEl.textContent = current.slice(0, charIndex);
+
+                    if (charIndex === current.length) {
+                        deleting = true;
+                        setTimeout(tick, holdDelay);
+                        return;
+                    }
+                    setTimeout(tick, typeSpeed);
+                    return;
+                }
+
+                charIndex -= 1;
+                typedEl.textContent = current.slice(0, charIndex);
+
+                if (charIndex === 0) {
+                    deleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(tick, gapDelay);
+                    return;
+                }
+                setTimeout(tick, deleteSpeed);
+            }
+
+            setTimeout(tick, 500);
         });
     </script>
 </body>
